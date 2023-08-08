@@ -1,15 +1,19 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
 scrape_configs:
   - job_name: "prometheus"
     static_configs:
       - targets: ["localhost:9090"]
 
   - job_name: 'jira'
-    scheme: https
-    metrics_path: '/jira/plugins/servlet/prometheus/metrics?token=secrettoken'
+    scheme: http
+    metrics_path: '/plugins/servlet/prometheus/metrics?token=secrettoken'
     params:
         token: ['Urs7UCzuXn8Pz7kOVnvP59IBgVQeXYlAfBe']
     static_configs:
-      - targets: ['localhost:8080']
+      - targets: ['jira:8080']
 
   - job_name: 'grafana'
     scheme: http
