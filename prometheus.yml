@@ -1,0 +1,18 @@
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  - job_name: 'jira'
+    scheme: https
+    metrics_path: '/jira/plugins/servlet/prometheus/metrics?token=secrettoken'
+    params:
+        token: ['Urs7UCzuXn8Pz7kOVnvP59IBgVQeXYlAfBe']
+    static_configs:
+      - targets: ['localhost:8080']
+
+  - job_name: 'grafana'
+    scheme: http
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['grafana:3000']
