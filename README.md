@@ -17,7 +17,8 @@ docker-compose up -d
 
 ## Connecting JIRA with Prometheus
 1. In JIRA go to Administration > Manage Apps . Install the 'Prometheus Exporter for JIRA' add-on. 
-2. You can access Prometheus in your web browser at `http://localhost:9090`. Prometheus configurations are already done in prometheus.yml, therefore you will be seeing that JIRA and Grafana are up, at Status > Targets.
+2. On the left panel, you'll see the add-on. From there we get the endpoint `http://localhost:8080/plugins/servlet/prometheus/metrics`, it's where we get the JIRA metrics from. It's placed in prometheus.yml.
+3. You can access Prometheus in your web browser at `http://localhost:9090`. Prometheus configurations are already done in prometheus.yml, therefore you will be seeing that JIRA and Grafana are up, at Status > Targets.
 
 ![alt text](/screenshots/prometheus.png)
 
