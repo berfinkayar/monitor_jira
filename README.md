@@ -19,7 +19,7 @@ docker-compose up -d
 1. In JIRA go to Administration > Manage Apps . Install the 'Prometheus Exporter for JIRA' add-on. 
 2. You can access Prometheus in your web browser at `http://localhost:9090`. Prometheus configurations are already done in prometheus.yml, therefore you will be seeing that JIRA and Grafana are up, at Status > Targets.
 
-![alt text](/screenshots/dashboard-4.png)
+![alt text](/screenshots/prometheus.png)
 
 ## Connecting Grafana with Prometheus
 1. Grafana is accessable in your web browser at `http://localhost:3000`. Login by entering "admin" for both username and password. 
